@@ -6,8 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Add OPTIONS method
+    allowedHeaders: ['Content-Type', 'Authorization'], // Add headers you need
+    credentials: true, // Allow sending cookies
   });
   await app.listen(8000);
   //Logger.log(`Listening on http://localhost:${port}`);
