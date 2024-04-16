@@ -59,3 +59,88 @@ $ npm run test:cov
 ```
 
 
+# API Documentation
+# Entity API Documentation
+
+This API allows you to manage business entities/leads in your application.
+
+## Create an Entity
+
+### Request
+
+```http
+POST /entities
+
+
+{
+  "ABN": "123456789",
+  "ABNStatus": "Active",
+  "EntityTypeInd": "Individual",
+  "EntityTypeText": "Person",
+  "GivenName": "John",
+  "FamilyName": "Doe",
+  "BusinessAddress": {
+    "State": "New York",
+    "Postcode": "10001"
+  },
+  "GST": [
+    {
+      "status": "Registered",
+      "GSTStatusFromDate": "2022-01-01"
+    }
+  ]
+}
+
+
+GET /entities
+GET /entities?page=1&limit=10
+
+{
+  "message": "Entities fetched successfully",
+  "data": [
+    {
+      "_id": "60fd9bd6b333e018ac2e7aa1",
+      "ABN": "123456789",
+      "ABNStatus": "Active",
+      "EntityTypeInd": "Individual",
+      "EntityTypeText": "Person",
+      "GivenName": "John",
+      "FamilyName": "Doe",
+      "BusinessAddress": {
+        "State": "New York",
+        "Postcode": "10001"
+      },
+      "GST": [
+        {
+          "_id": "60fd9bd6b333e018ac2e7aa2",
+          "status": "Registered",
+          "GSTStatusFromDate": "2022-01-01",
+          "__v": 0
+        }
+      ],
+      "__v": 0
+    },
+    // More entities...
+  ]
+  pagination: {
+     "total": 120,
+        "perPage": 10,
+        "currentPage": 1,
+        "totalPages": 12
+  }
+}
+
+# Lead API Documentation
+
+This API allows you to manage leads in your application.
+
+## Create a Lead
+
+### Request
+
+```http
+POST /leads
+GET /leads
+```
+
+
