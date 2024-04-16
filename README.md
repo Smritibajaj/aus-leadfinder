@@ -94,6 +94,7 @@ POST /entities
 
 GET /entities
 GET /entities?page=1&limit=10
+GET /entities/{{ABN}}
 
 {
   "message": "Entities fetched successfully",
@@ -137,10 +138,23 @@ This API allows you to manage leads in your application.
 ## Create a Lead
 
 ### Request
+http
+POST /users
 
-```http
-POST /leads
-GET /leads
-```
+Request Body
+json
+Copy code
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "phone": "1234567890",
+  "company": "ABC Company"
+}
+
+## Get all Leads
+GET /users
+GET /entities?page=1&limit=10
+
 
 
