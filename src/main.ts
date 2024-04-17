@@ -10,6 +10,8 @@ async function bootstrap() {
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
+    credentials: true, //access-control-allow-credentials:true,
+    preflightContinue: false,
   });
   await app.listen(8000);
   //Logger.log(`Listening on http://localhost:${port}`);
