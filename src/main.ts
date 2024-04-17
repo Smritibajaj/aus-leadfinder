@@ -7,7 +7,7 @@ async function bootstrap() {
   // Enable CORS with specific options
   app.enableCors({
     // true for all origins
-    origin: 'aus-leadfinder-fe.vercel.app/',
+    origin: 'https://aus-leadfinder-fe.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true, //access-control-allow-credentials:true,
